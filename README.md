@@ -44,3 +44,8 @@ Access ```pg_roles``` table & filter roles that do not include "pg" (predefined 
 
 4. ```\du``` (Display users & roles)
 <img src="./scenes/chapter2/ch2_showur.png">
+
+5. ```CREATE DATABASE [user] owner [user|role]```
+
+**Tip:** <em>Grant ownership to a parent ROLE to both child databases.<br>Children are parents' property until they become 18 years old.</em>
+<img src="./scenes/chapter2/ch2_createdbusers.png">
