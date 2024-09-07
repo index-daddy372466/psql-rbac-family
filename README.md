@@ -28,3 +28,19 @@ Access ```pg_roles``` table & filter roles that do not include "pg" (predefined 
 **Tip:** <em>Depending on the PostgreSQL version, after setting ```SEARCH_PATH```, if the path is not updated, it may be necessary to leave the current database (home) & ```\c``` to home again.</em>
 
 <img src="./scenes/chapter1/chapter1_environment_setup.png">
+
+
+## Creat Family roles & grant roles to family members
+
+1. ```CREATE [role]```
+<img src="./scenes/chapter2/ch2_createroles.png">
+**Tip:** <em>Logging in with a role is optional. Use ```CREATE [role] WITH LOGIN [PASSWORD 'password']```.</em>
+
+2. ```CREATE [user] WITH LOGIN``` (Login is optional)
+<img src="./scenes/chapter2/ch2_createusers.png">
+
+3. ```GRANT [rolname] to [role]```
+<img src="./scenes/chapter2/ch2_grantroles.png">
+
+4. ```\du``` (Display users & roles)
+<img src="./scenes/chapter2/ch2_showur.png">
