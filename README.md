@@ -1,5 +1,5 @@
 # Meet the RBAC Family
-<img src="./scenes/rbacfam.png">
+<img src="./scenes/chapter1/familyphoto.png">
 
 ## Setup family - home [schema - database]
 1. ```CREATE``` database (home)
