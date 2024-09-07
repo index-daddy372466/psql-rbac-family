@@ -49,3 +49,26 @@ Access ```pg_roles``` table & filter roles that do not include "pg" (predefined 
 
 **Tip:** <em>Grant ownership to a parent ROLE to both child databases.<br>Children are parents' property until they become 18 years old.</em>
 <img src="./scenes/chapter2/ch2_createdbusers.png">
+
+
+## Grant & Revoke to roles|users
+1. ```REVOKE from public``` & ```GRANT CONNECT```
+<img src="./scenes/chapter3/revokeonpublicandgrantconnect.png">
+
+2. ```\dn``` (show schemas) & ```GRANT USAGE to [role|user]```
+<img src="./scenes/chapter3/checkschemasandgrant.png">
+
+3. ```GRANT ALL PRIVILEGES ON ALL TABLES IN SCHEMA family to [role|user]```
+<img src="./scenes/chapter3/grantalltoparents.png">
+
+4. Grant priveleges to child role
+
+<img src="./scenes/chapter3/granttochildren.png">
+
+5. Revoke priveleges from child role to parentroom
+<img src="./scenes/chapter3/revokechildrenfromparentsroom.png">
+
+6. Alter default privileges on the current changes. New instances can inherit revoke/grant changes.
+<img src="./scenes/chapter3/alterdefaultprivileges.png">
+
+
