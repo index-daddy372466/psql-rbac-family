@@ -216,6 +216,34 @@ Charyll informs mom that she believes her husband [**dad**] may be suspect of ch
 
 **a. Dad purchases another home for their affair schema and stays with family schema.**
 
+1. ```create database [db_name]```
+<img src="scenes/chapter6.1/createaffairdb.png">
+
+2. Dad requests from the bank/magistrate to revoke all public creations from public schema
+<img src="scenes/chapter6.1/bankpreventspublic.png">
+
+3. Dad alters the ```SEARCH_PATH``` for ```affair DATABASE``` for a convenient search.
+<img src="scenes/chapter6.1/searchpath.png">
+
+4. Dad grant access to mistress, but revokes to his own family from ```affair DATABASE```.
+
+5. Create ```affair SCHEMA```
+<img src="scenes/chapter6.1/createaffair.png">6. 
+
+6. ```REVOKE``` child & parent roles from accessing affair scema within affair
+<img src="scenes/chapter6.1/affairgrantrevoke.png">
+
+7. Dad creates bedroom table in ```affair DATABASE```
+<img src="scenes/chapter6.1/dadcreatetable.png">
+
+8. Dad grants all privileges to mistress & revokes from his own family
+<img src="scenes/chapter6.1/revokeprivonaff.png">
+<img src="scenes/chapter6.1/childandmomprevent.png">
+
+9. Dad drops affair bedroom table & ```affair SCHEMA``` from home database
+<img src="scenes/chapter6.1/daddropsaffairhome.png">
+
+
 **b. Mom divorces dad by seizing (change ownership) his assets & divorcing (drop role) Dad.**
 
 
