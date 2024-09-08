@@ -190,6 +190,34 @@ Mom can grant herself usage to the affair (because mom is a ```parent``` and own
 <img src="scenes/chapter5/momnobedroom.png">
 <img src="scenes/chapter5/childnobedroom.png">
 
+## Mom Catches Dad Cheating
+
+1. Mom is on a coffee date with her best-friend, Charyll.
+Charyll informs mom that she believes her husband [**dad**] may be suspect of cheating by inviting 1 woman to the house per week.
+
+- Mom is shocked in disbelief. Mom leaves work early and speeds home due to intense paranoia, thinking her husband can be cheating on her at this very moment.
+
+- Since Mom has is a co-owner of the ```house``` database, mom is going to grant herself usage onto the ```affair SCHEMA```.
+
+- Mom can see that an ```affair SCHEMA``` exists, but she is limited to what she can see and/or do within this table.
+<img src="scenes/chapter6/momdiscoversaffair.png">
+
+- Mom attempts to grant herself access to see what is going on in the affair.bedroom table, but cannot because **Dad is the owner of the bedroom table, not Mom**.
+<img src="scenes/chapter6/momislimited.png">
+
+**Tip:**<em>Mom is an owner of the ```house``` database, but not the ```bedroom``` table.</em>
+
+2. Mom is aware what the word, **affair** means, so she knocks on the door loudly with attitude. Requesting her hudband to come out.
+
+- After Dad opens the door, mom can see everything, even the "adult toys" appliance that is currently in use.
+<img src="scenes/chapter6/momcanseecheating.png">
+
+3. After confirming Charyll's suspicion, mom gives dad 2 choices: 
+
+**a. Dad purchases another home for their affair schema and stays with family schema.**
+
+**b. Mom divorces dad by seizing (change ownership) his assets & divorcing (drop role) Dad.**
+
 
 
 

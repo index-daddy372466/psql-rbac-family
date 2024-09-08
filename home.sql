@@ -493,8 +493,6 @@ ALTER TABLE ONLY family.parentroom
 -- Name: SCHEMA affair; Type: ACL; Schema: -; Owner: parent
 --
 
-REVOKE ALL ON SCHEMA affair FROM parent;
-GRANT CREATE ON SCHEMA affair TO parent;
 GRANT USAGE ON SCHEMA affair TO dad;
 GRANT USAGE ON SCHEMA affair TO mistress;
 
@@ -519,6 +517,7 @@ GRANT USAGE ON SCHEMA public TO PUBLIC;
 --
 
 GRANT SELECT,UPDATE ON TABLE affair.bedroom TO mistress;
+GRANT SELECT ON TABLE affair.bedroom TO parent;
 
 
 --
