@@ -108,7 +108,7 @@ After paying off the mortgage in a short amount of time, you and your spouse are
 <img src="scenes/chapter4/proofofowner.png">
 
 2. All tables, views & sequences within the home database still belongs to the bank/magistrage
-![alt text](currroles.png)
+<img src="scenes/chapter4/currroles.png">
 
 Since the mortgage is paid off, postgres will give ownership to parent role.
 
