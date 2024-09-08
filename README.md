@@ -181,7 +181,10 @@ In PostgreSQL, a role must be explicitly given the CREATEDB permission to create
 <img src="scenes/chapter5/mistressaccessaffair.png">
 
 6. Dad revokes kids and wife from having access to the affair schema.
-Mom can grant herself usage to the affair schema but does truly believes her husband is loyal, therefore, this schema does not come to her mind.
+
+**Tip:**<em>
+Mom can grant herself usage to the affair (because mom is a ```parent``` and owns the same database as dad) but does truly believes her husband is loyal, therefore, this schema does not exist to mom...yet. Dad is **hiding** the affair schema from mom.
+</em>
 <img src="scenes/chapter5/dadhasaccess.png">
 <img src="scenes/chapter5/revokefam.png">
 <img src="scenes/chapter5/momnobedroom.png">
