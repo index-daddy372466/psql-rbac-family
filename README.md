@@ -136,8 +136,12 @@ WHERE tbl.schemaname = 'family';
 <img src="scenes/chapter4/viewowner.png">
 
 6. Below, we can view mom granting ```SELECT``` privileges on parentroom table to child role. Subsequently, the child role can view, or ```SELECT``` to parentroom, but cannot ```DELETE``` or ```UPDATE``` to the parentroom. The parent role owns the home database, and the relations within the database.
+
 <img src="scenes/chapter4/parentgrantschildaccess.png">
 <img src="scenes/chapter4/childprivupdate.png">
+
+7. Don't forget to change schema ownership:
+<img src="scenes/chapter4/changeschema.png">
 
 
 
