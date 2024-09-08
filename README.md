@@ -71,4 +71,28 @@ Access ```pg_roles``` table & filter roles that do not include "pg" (predefined 
 6. Alter default privileges on the current changes. New instances can inherit revoke/grant changes.
 <img src="./scenes/chapter3/alterdefaultprivileges.png">
 
+## Proof of Privileges
+
+### Parent Privileges
+<img src="scenes/chapter4/parentpriv.png">
+
+
+### Child Privileges
+
+1. Parent role privileges. SELECT,INSERT,UPDATE,DELETE
+<img src="scenes/chapter4/childlogin.png">
+
+2. Child role privileges:
+Children are granted ```ALL PRIVILEGES``` for the bathroom & childroom tables. 
+Children are granted ```INSERT,UPDATE``` PRIVILEGES for the livingroom & kitchen tables.
+<img src="scenes/chapter4/childpriveleges.png">
+<img src="scenes/chapter4/child2login.png">
+<img src="scenes/chapter4/childprivinsert.png">
+
+### Children Revoked from Parents room
+
+3. Children are revoked from having anything to do with thair parent's room (parentroom table)
+<img src="scenes/chapter4/chidrenrevokedfromparents.png">
+
+
 
