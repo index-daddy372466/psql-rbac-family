@@ -95,4 +95,58 @@ Children are granted ```INSERT,UPDATE``` PRIVILEGES for the livingroom & kitchen
 <img src="scenes/chapter4/chidrenrevokedfromparents.png">
 
 
+## Parents pay off Mortgage
+1. The current owner of home [database] is postgres (the bank or magistrate)
+<img src="scenes/chapter1/chapter1_database.png">
+After paying off the mortgage in a short amount of time, you and your spouse are granted ownership of the property!
+
+```ALTER DATABASE [db_name] OWNER TO [role|user]```
+
+<img src="scenes/chapter4/changeownershiptoparent.png">
+
+```\l```
+
+<img src="scenes/chapter4/proofofowner.png">
+
+2. All tables, views & sequences within the home database still belongs to the bank/magistrage
+![alt text](currroles.png)
+
+Since the mortgage is paid off, postgres will give ownership to parent role.
+
+**One-By-One**
+
+```ALTER TABLE [table_name] OWNER to [role|user]```
+
+**Format queries and paste**
+ ```
+ SELECT 'ALTER TABLE '||tbl.tablename||' OWNER to parent'
+FROM pg_tables tbl
+WHERE tbl.schemaname = 'family';
+```
+**Tip:** <em>Do not forget to all the semi-colon -; at the end of queries</em>
+
+3. After formatting is complete, copy & paste commands into terminal. (Ensure you are in the home database)
+<img src="scenes/chapter4/altertableformat.png">
+<img src="scenes/chapter4/alteractive.png">
+
+4. List the relations to view the changes ```\d```
+<img src="scenes/chapter4/tableownerparent.png">
+
+5. It seems that 1 relation is currently owned by **postgres** <br> Here is the code to alter ownership
+<img src="scenes/chapter4/viewowner.png">
+
+6. Below, we can view mom granting ```SELECT``` privileges on parentroom table to child role. Subsequently, the child role can view, or ```SELECT``` to parentroom, but cannot ```DELETE``` or ```UPDATE``` to the parentroom. The parent role owns the home database, and the relations within the database.
+<img src="scenes/chapter4/parentgrantschildaccess.png">
+<img src="scenes/chapter4/childprivupdate.png">
+
+
+
+
+
+
+
+
+
+
+
 
