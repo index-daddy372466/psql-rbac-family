@@ -22,8 +22,7 @@ Access ```pg_roles``` table & filter roles that do not include "pg" (predefined 
 ```CREATE VIEW current_roles AS SELECT * FROM pg_roles WHERE rolname not like 'pg%' AND rolname NOT LIKE 'postgres';```
 
 <img src="./scenes/chapter1/chapter1_current_roles_views.png">
-
-**Tip:** <em>The ```SEARCH_PATH``` can be set **temporarily** by omitting ```ALTER DATABASE [database]``` in step number 6</em>
+c
 
 **Tip:** <em>Depending on the PostgreSQL version, after setting ```SEARCH_PATH```, if the path is not updated, it may be necessary to leave the current database (home) & ```\c``` to home again.</em>
 
@@ -123,7 +122,7 @@ Since the mortgage is paid off, postgres will give ownership to parent role.
 FROM pg_tables tbl
 WHERE tbl.schemaname = 'family';
 ```
-**Tip:** <em>Do not forget to all the semi-colon -; at the end of queries</em>
+**Tip:** <em>Do not forget to add the semi-colon -; at the end of queries</em>
 
 3. After formatting is complete, copy & paste commands into terminal. (Ensure you are in the home database)
 <img src="scenes/chapter4/altertableformat.png">
@@ -142,6 +141,52 @@ WHERE tbl.schemaname = 'family';
 
 7. Don't forget to change schema ownership:
 <img src="scenes/chapter4/changeschema.png">
+
+
+## Meet the Mistress (New Role)
+
+1. Dad creates mistress role.
+<img src="scenes/chapter5/mymistresscreated.png">
+
+**Tip:** <em>For this particular scenario, the mistress role will **not require a user** because this character can be more than 1 person acting as a ```mistress```, but this role is configured with a login password.</em>
+
+**Tip:**<em>After giving the role parent ```CREATEDB CREATEROLE``` privileges, it seems that the dad (with parent privileges) is unable to create. To workaround this issue ```CREATEDB CREATEROLE``` has been set explicitely to dad and to mom</em>
+
+<img src="scenes/chapter5/alteruser.png">
+<img src="scenes/chapter5/showrolesupdate.png">
+
+In PostgreSQL, a role must be explicitly given the CREATEDB permission to create databases, unless it's a superuser role. Superuser roles bypass all permission checks.
+
+### The mistress is a guest of Dad, so he grants/revokes their privileges under the affair schema.
+
+**Dad created a bedroom under the affair schema**
+
+**Tip:**<em>Feel free to include the affair schema into the ```SEARCH_PATH```, or else you will need to include your newly created table with ```affair.table_name```</em>
+
+2. ```SHOW SEARCH_PATH``` & ```SET SEARCH_PATH``` (Temporary change)
+
+**Tip:**<em>To change the search_path permanently within ```home``` database, ```ALTER DATABASE home SET SEARCH_PATH to family,affair,public```.<br> Dad can do this because dad is undera parent role, which is an ```OWNER``` of database ```home```</em>
+<img src="scenes/chapter5/searchpathupdate.png">
+
+3. Dad creates his own bedroom within the home under the affair schema. Then he inserts some appliances.
+<img src="scenes/chapter5/affairbedroom.png">
+
+4. Dad grants/revokes the mistress to/from privileges
+<img src="scenes/chapter5/revokegranttomistress.png">
+<img src="scenes/chapter5/dadgrantsmistresstoaffair.png">
+<img src="scenes/chapter5/mistressprivproff.png">
+
+5. ```GRANT SELECT, UPDATE``` privileges to the mistress
+<img src="scenes/chapter5/mistressrights.png">
+<img src="scenes/chapter5/mistressaccessaffair.png">
+
+6. Dad revokes kids and wife from having access to the affair schema.
+Mom can grant herself usage to the affair schema but does truly believes her husband is loyal, therefore, this schema does not come to her mind.
+<img src="scenes/chapter5/dadhasaccess.png">
+<img src="scenes/chapter5/revokefam.png">
+<img src="scenes/chapter5/momnobedroom.png">
+<img src="scenes/chapter5/childnobedroom.png">
+
 
 
 
