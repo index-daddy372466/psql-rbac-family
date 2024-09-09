@@ -245,7 +245,17 @@ Charyll informs mom that she believes her husband [**dad**] may be suspect of ch
 <img src="scenes/chapter6.1/daddropsaffairhome.png">
 
 
-**b. Mom divorces dad by seizing (change ownership) his assets & divorcing (drop role) Dad.**
+**b. Mom divorces dad by seizing his assets & divorcing (revoke role) Dad.**
+
+1. In the case that the ```affair DATABASE``` exists, mom speaks to the magistrate to seize dad's property.
+<img src="scenes/chapter6.1/bankownshouse.png">
+
+2. Mom revokes ```parent``` role from dad. Now dad cannot access wither ```home DATABASE``` or ```affair DATABASE```
+<img src="scenes/chapter6.1/dadisrevokedofrole.png">
+<img src="scenes/chapter6.1/dadcannotconnect.png">
+
+3. Mom is now a single parent.
+
 
 
 
