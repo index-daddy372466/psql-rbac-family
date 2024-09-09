@@ -17,15 +17,6 @@ SET client_min_messages = warning;
 SET row_security = off;
 
 --
--- Name: affair; Type: SCHEMA; Schema: -; Owner: parent
---
-
-CREATE SCHEMA affair;
-
-
-ALTER SCHEMA affair OWNER TO parent;
-
---
 -- Name: family; Type: SCHEMA; Schema: -; Owner: parent
 --
 
@@ -37,41 +28,6 @@ ALTER SCHEMA family OWNER TO parent;
 SET default_tablespace = '';
 
 SET default_table_access_method = heap;
-
---
--- Name: bedroom; Type: TABLE; Schema: affair; Owner: dad
---
-
-CREATE TABLE affair.bedroom (
-    id integer NOT NULL,
-    appliance character varying(20),
-    inuse boolean DEFAULT false
-);
-
-
-ALTER TABLE affair.bedroom OWNER TO dad;
-
---
--- Name: bedroom_id_seq; Type: SEQUENCE; Schema: affair; Owner: dad
---
-
-CREATE SEQUENCE affair.bedroom_id_seq
-    AS integer
-    START WITH 1
-    INCREMENT BY 1
-    NO MINVALUE
-    NO MAXVALUE
-    CACHE 1;
-
-
-ALTER TABLE affair.bedroom_id_seq OWNER TO dad;
-
---
--- Name: bedroom_id_seq; Type: SEQUENCE OWNED BY; Schema: affair; Owner: dad
---
-
-ALTER SEQUENCE affair.bedroom_id_seq OWNED BY affair.bedroom.id;
-
 
 --
 -- Name: bathroom; Type: TABLE; Schema: family; Owner: parent
@@ -278,13 +234,6 @@ ALTER SEQUENCE family.parentroom_id_seq OWNED BY family.parentroom.id;
 
 
 --
--- Name: bedroom id; Type: DEFAULT; Schema: affair; Owner: dad
---
-
-ALTER TABLE ONLY affair.bedroom ALTER COLUMN id SET DEFAULT nextval('affair.bedroom_id_seq'::regclass);
-
-
---
 -- Name: bathroom id; Type: DEFAULT; Schema: family; Owner: parent
 --
 
@@ -317,17 +266,6 @@ ALTER TABLE ONLY family.livingroom ALTER COLUMN id SET DEFAULT nextval('family.l
 --
 
 ALTER TABLE ONLY family.parentroom ALTER COLUMN id SET DEFAULT nextval('family.parentroom_id_seq'::regclass);
-
-
---
--- Data for Name: bedroom; Type: TABLE DATA; Schema: affair; Owner: dad
---
-
-COPY affair.bedroom (id, appliance, inuse) FROM stdin;
-1	television	f
-2	bed	f
-3	adult toys	t
-\.
 
 
 --
@@ -400,13 +338,6 @@ COPY family.parentroom (id, appliance, inuse, users) FROM stdin;
 
 
 --
--- Name: bedroom_id_seq; Type: SEQUENCE SET; Schema: affair; Owner: dad
---
-
-SELECT pg_catalog.setval('affair.bedroom_id_seq', 3, true);
-
-
---
 -- Name: bathroom_id_seq; Type: SEQUENCE SET; Schema: family; Owner: parent
 --
 
@@ -439,14 +370,6 @@ SELECT pg_catalog.setval('family.livingroom_id_seq', 10, true);
 --
 
 SELECT pg_catalog.setval('family.parentroom_id_seq', 4, true);
-
-
---
--- Name: bedroom bedroom_pkey; Type: CONSTRAINT; Schema: affair; Owner: dad
---
-
-ALTER TABLE ONLY affair.bedroom
-    ADD CONSTRAINT bedroom_pkey PRIMARY KEY (id);
 
 
 --
@@ -490,14 +413,6 @@ ALTER TABLE ONLY family.parentroom
 
 
 --
--- Name: SCHEMA affair; Type: ACL; Schema: -; Owner: parent
---
-
-GRANT USAGE ON SCHEMA affair TO dad;
-GRANT USAGE ON SCHEMA affair TO mistress;
-
-
---
 -- Name: SCHEMA family; Type: ACL; Schema: -; Owner: parent
 --
 
@@ -510,14 +425,6 @@ GRANT USAGE ON SCHEMA family TO child;
 
 REVOKE ALL ON SCHEMA public FROM PUBLIC;
 GRANT USAGE ON SCHEMA public TO PUBLIC;
-
-
---
--- Name: TABLE bedroom; Type: ACL; Schema: affair; Owner: dad
---
-
-GRANT SELECT,UPDATE ON TABLE affair.bedroom TO mistress;
-GRANT SELECT ON TABLE affair.bedroom TO parent;
 
 
 --
@@ -567,13 +474,6 @@ GRANT SELECT,UPDATE ON TABLE family.livingroom TO child;
 --
 
 GRANT SELECT ON TABLE family.parentroom TO child;
-
-
---
--- Name: DEFAULT PRIVILEGES FOR TABLES; Type: DEFAULT ACL; Schema: affair; Owner: dad
---
-
-ALTER DEFAULT PRIVILEGES FOR ROLE dad IN SCHEMA affair GRANT SELECT,UPDATE ON TABLES  TO mistress;
 
 
 --
