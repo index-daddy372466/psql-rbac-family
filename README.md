@@ -244,17 +244,35 @@ Charyll informs mom that she believes her husband [**dad**] may be suspect of ch
 <img src="scenes/chapter6.1/daddropsaffairhome.png">
 
 
-**b. Mom divorces dad by seizing his assets & divorcing (revoke role) Dad.**
+**b. Mom divorces dad after seizing his assets (revoke role).**
 
 1. In the case that the ```affair DATABASE``` exists, mom speaks to the magistrate to seize dad's property.
 <img src="scenes/chapter6.1/bankownshouse.png">
 
-2. Mom revokes ```parent``` role from dad. Now dad cannot access wither ```home DATABASE``` or ```affair DATABASE```
+2. Mom revokes ```parent``` role from dad. Now dad cannot access either ```home DATABASE``` or ```affair DATABASE```
 <img src="scenes/chapter6.1/dadisrevokedofrole.png">
 <img src="scenes/chapter6.1/dadcannotconnect.png">
 
 3. Mom is now a single parent.
 
+
+**Views up to this point**
+<img src="scenes/chapter6.1/viewroles.png">
+
+
+1. ```select * from current_roles where rolcanlogin = true and rolname != 'mistress';```
+<em>View Users (accounts) with Login, excluding <b>mistress</b> </em>
+
+<img src="scenes/chapter6.1/viewusers.png">
+
+2. ```select * from current_roles where rolcanlogin=false or rolname = 'mistress';```
+<em>View Roles with no Login, including <b>mistress</b> as an exception</em>
+
+**Tip:** <em><b>Mistress</b> is a role with a login. Each week dad invites a new Mistress over to the house database and/or affair database. Because of this scenario, Mistress is a role that is 1) <b>created by dad</b> ```WITH LOGIN PASSWORD 'password'``` & 2) has total control over the mistress role's privileges.</em>
+
+For example, Dad can limit Mistress server connections. We are limiting Mistress to 2 so that Dad can hang out with 2 at the same time!
+<img src="scenes/chapter6.1/alterconnlimit.png">
+<img src="scenes/chapter6.1/connlimit.png">
 
 
 
