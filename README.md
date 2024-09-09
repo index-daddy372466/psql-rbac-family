@@ -22,7 +22,6 @@ Access ```pg_roles``` table & filter roles that do not include "pg" (predefined 
 ```CREATE VIEW current_roles AS SELECT * FROM pg_roles WHERE rolname not like 'pg%' AND rolname NOT LIKE 'postgres';```
 
 <img src="./scenes/chapter1/chapter1_current_roles_views.png">
-c
 
 **Tip:** <em>Depending on the PostgreSQL version, after setting ```SEARCH_PATH```, if the path is not updated, it may be necessary to leave the current database (home) & ```\c``` to home again.</em>
 
