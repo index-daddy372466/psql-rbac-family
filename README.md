@@ -238,6 +238,7 @@ Charyll informs mom that she believes her husband [**dad**] may be suspect of ch
 
 8. Dad grants all privileges to mistress & revokes from his own family
 <img src="scenes/chapter6.1/revokeprivonaff.png">
+<img src="scenes/chapter6.1/mistressconnect.png">
 <img src="scenes/chapter6.1/childandmomprevent.png">
 
 9. Dad drops affair bedroom table & ```affair SCHEMA``` from home database
